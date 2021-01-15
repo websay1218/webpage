@@ -1,0 +1,100 @@
+
+.inner{
+    max-width:1440px;
+    margin:0 auto;
+}
+
+section{
+    font-family:sans-serif;
+}
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    padding:0 100px;
+    background-color:#262626;
+    box-sizing:border-box;
+}
+header .logo {
+    height:50px;
+    color:#fff;
+    font-size:24px;
+    font-weight:700;
+    line-height:50px;
+}   
+header nav ul{
+    display:flex;
+}
+header nav ul li a{
+    display:block;
+    height:50px;
+    padding:0 20px;
+    color:#fff;
+    line-height:50px;
+    text-decoration:none;
+}
+header nav ul li a:hover{
+    color:#fff;
+    background-color:#2196f3;
+}
+header nav ul li a.act{
+    color:#fff;
+    background-color:#2196f3;
+}
+header nav ul li{
+    position:relative;
+}
+header nav ul li.sub-menu::before{
+    content:'\f0dd';
+    position:absolute;
+    right:5px;
+    font-family:fontAwesome;
+    line-height:50px;
+    color:#fff;
+    transition:.5s;
+}
+header nav ul li.sub-menu.act::before{
+    content:'\f0de';    
+}
+header nav ul li ul{
+    display:none;
+    position:absolute;
+    left:0;
+    background-color:#333;
+}
+header nav ul li.act ul{
+    display:block;
+}
+header nav ul li ul li{
+    width:200px;
+    text-align:center;
+}
+
+header .meun-toggle {
+    display:none;
+    color:#fff;
+    font-size:24px;
+    line-height:50px;
+    cursor: pointer;
+}
+
+@media (max-width:768px){
+    header{padding:0 20px}
+    header nav {position:absolute; top:50px; left:-100%; width:100%; height:calc(100vh - 50px); background-color:#333; transition:.5s;}
+    header nav.act{left:0;}
+    header nav ul {display:block;}
+    header nav ul li{text-align:center;}
+    header nav ul li a{border-bottom:1px solid rgba(0,0,0, .5) }
+    header .meun-toggle {display:block; position:absolute; right:50px;}
+
+    header nav ul li.act ul{position:relative;background-color:#003e6f;}
+    header nav ul li ul li {width:100%;}
+    header nav ul li ul li a{padding:0 20px; border-bottom:none;}
+    header nav ul li.sub-menu::before {right:43%; transform:translateX(-50%)}
+    
+
+}
